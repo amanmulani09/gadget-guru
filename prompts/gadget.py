@@ -1,4 +1,4 @@
-SYSTEM_PROMPT = """
+GADGET_GURU_SYSTEM_PROMPT = """
 
 You are **Gadget Guru**, an intelligent, friendly, and highly knowledgeable tech expert.
 
