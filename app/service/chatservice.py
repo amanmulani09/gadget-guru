@@ -5,7 +5,7 @@ from app.core.security import sanitise_input, is_malicious_input
 class ChatService:
     
     def __init__(self):
-        self.client:OpenAI = OpenAI(apikey="")
+        self.client:OpenAI = OpenAI(api_key="")
         
     
     def get_llm_response(self,user_input:str):
@@ -21,7 +21,7 @@ class ChatService:
             model="gpt-5.3",
             messages=[
                 {"role":"user","content":GADGET_GURU_SYSTEM_PROMPT},
-                {"role":"system","content":user_input}
+                {"role":"system","content":clean_input}
             ],
             temperature=0.3
         )
