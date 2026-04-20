@@ -18,12 +18,16 @@ class ChatService:
         clean_input = sanitise_input(user_input)
         
         response = self.client.chat.completions.create(
-            model="gpt-5.3",
+            model="gpt-5.3", #which model to use gpt-4/3
             messages=[
                 {"role":"user","content":GADGET_GURU_SYSTEM_PROMPT},
                 {"role":"system","content":clean_input}
-            ],
-            temperature=0.3
+            ], # array of conversation messages 
+            temperature=0.3, # controls randomness (0=determenstic, 2= optimistic)
+            max_tokens= 65000, # max length of response
+            top_p=0, # alternate to temprature 
+            
+            
         )
         
         return {
