@@ -20,8 +20,8 @@ class ChatService:
         response = self.client.chat.completions.create(
             model="gpt-5.3", #which model to use gpt-4/3
             messages=[
-                {"role":"user","content":GADGET_GURU_SYSTEM_PROMPT},
-                {"role":"system","content":clean_input}
+                {"role":"system","content":GADGET_GURU_SYSTEM_PROMPT},
+                {"role":"user","content":clean_input}
             ], # array of conversation messages 
             temperature=0.3, # controls randomness (0=determenstic, 2= optimistic)
             max_tokens= 65000, # max length of response
