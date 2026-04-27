@@ -92,7 +92,6 @@ for function_call in response.output:
             "output": json.dumps(result)
         })
         
-        
 # Step 5 : send the result back to LLM 
 
 final_response = client.responses.create(
